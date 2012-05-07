@@ -12,68 +12,97 @@
 	<meta name="author" content="">
 
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="less/style.css">
+
+  <script type="text/javascript" src="http://use.typekit.com/rfo8mlp.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet/less" href="less/style.less">
+  <script src="js/libs/less-1.3.0.min.js"></script>
+  <script type="text/javascript" src="http://cdn.sublimevideo.net/js/se9w1agi.js"></script>
+  
+  <!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
+  to style.css, and replace the 2 lines above by this one:
+
+  <link rel="stylesheet" href="less/style.css">
+   -->
 
 	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Project name</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+  <nav id="navbar">
+    <ul class="nav">
+      <li class="bose">Bose</li>
+      <li class="active"><a href="#introduction">Introduction</a></li>
+      <li><a href="#seeItInAction">See it in Action</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#additionalDetails">Additional Details</a></li>
+    </ul>
+    <a class="buy" href="#" title="Buy Now">Buy Now</a>
+   </nav>
 
-    <div class="container">
+    <div class="slide" id="slide-1">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+      <div class="span6 offset6">
+        <h1>Introducing the revolutionary new Bose® Bluetooth® headset Series 2.</h1>
+        <h2>Sound quality so fantastic, you’ll forget you’re even on your phone.</h2>
       </div>
+
+    </div> <!-- /slide -->
+
+    <div class="slide" id="slide-2">
+
+      <img class="parallax parallax-1" src="/img/slide-2-1.png" />
+      <img class="parallax parallax-2" src="/img/slide-2-2.png" />
+      <img class="parallax parallax-3" src="/img/slide-2-3.png" />
+      <img class="parallax parallax-4" src="/img/slide-2-4.png" />
+
+      <video class="sublime" poster="http://media.jilion.com/vcg/ms_800.jpg" width="640" height="360" data-name="Midnight Sun" data-uid="57fb2708" preload="none">
+        <source src="http://media.jilion.com/vcg/ms_360p.mp4" />
+        <source src="http://media.jilion.com/vcg/ms_720p.mp4" data-quality="hd" />
+        <source src="http://media.jilion.com/vcg/ms_360p.webm" />
+        <source src="http://media.jilion.com/vcg/ms_720p.webm" data-quality="hd" />
+      </video>
+
+    </div> <!-- /slide -->
+
+    <div class="slide" id="slide-3">
+
+      <h2>Photos</h2>
+
+    </div> <!-- /slide -->
+
+    <div class="slide" id="slide-4">
+
+      <h2>Additional Details</h2>
 
       <!-- Example row of columns -->
       <div class="row">
-        <div class="span4">
-          <h2>Heading</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+        <div class="span6">
+          <p>Keeping in touch when you're on the move can be challenging. The Bose Bluetooth headset Series 2 meets the demands of on-the-go communications, from crowded terminals to noisy traffic. It's engineered to react automatically as noise levels change, allowing you to hear your end of the call better. Plus, an exclusive noise-rejecting microphone system helps your caller better hear you above both noise and wind. The Bose Bluetooth headset is compact, light and well-balanced, and now you can choose between right- or left-ear versions</p>
+
+          <h3>Better sound at both ends of your call</h3>
+          <p>Bose advanced technology automatically senses noise around you and adjusts the headset volume accordingly. In a loud environment, the volume increases so you can hear your call. When things quiet down, the volume decreases. Either way, the listening level remains constant. All the while, Bose TriPort® acoustic structure ensures a natural voice quality, whatever the volume level.</p>
+
+          <p>The person on the far end of the call hears you better, too. The Bose Bluetooth headset features an improved noise-rejecting microphone system that differentiates between your voice and background noise—even in windy environments. It transmits more of you (and less noise) to the listener.</p>
+
+          <p>With technologies that accentuate voices over noise, the Bose Bluetooth headset allows for more natural-sounding conversations with fewer interruptions—at both ends of the line.</p>
         </div>
-        <div class="span4">
-          <h2>Heading</h2>
-           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+        <div class="span6">
+          <h3>Designed for best possible fit</h3>
+          <p>The side-specific design of the Bose Bluetooth headset Series 2 allows you to get the fit that's right for you. The curved design fits facial features, and the button placement on top and bottom allows the use of a natural pinching motion that won't dislodge the headset from your ear. And the soft StayHear silicone tip keeps the headset comfortably and securely in place. It distributes contact over a greater area inside the ear, avoiding known pressure points. The headset stays in your ear without being too tight—and without an ear hook. </p>
+
+          <h3>Easy to use</h3>
+          <p>The Bose Bluetooth headset has separate buttons for power, volume and call send/end, all conveniently located on the top and bottom edges of the headset. Each action, from taking and ending calls to inserting or removing the headset, can be accomplished easily with one hand—important while you're driving or on the go.</p>
+
+          <aside>The Bluetooth word mark and logos are registered trademarks owned by Bluetooth SIG, Inc.</aside>
           <p><a class="btn" href="#">View details &raquo;</a></p>
        </div>
-        <div class="span4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
       </div>
 
-      <hr>
+    </div> <!-- /slide -->
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-
-    </div> <!-- /container -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 

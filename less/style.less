@@ -1,6 +1,8 @@
 @import "bootstrap/bootstrap.less";
 
 body {
+	background: #ededed;
+	font-family: "proxima-nova";
   padding-top: 60px;
   padding-bottom: 40px;
 }
@@ -9,5 +11,115 @@ body {
 
 
 /* ===== Primary Styles ========================================================
-   Author:
+   Author: Connor & Anthony
    ========================================================================== */
+
+// Headers
+
+h1 {
+	color: #353535;
+	font-size: 56px;
+	font-weight: 200;
+	line-height: 50px;
+}
+
+h2 {
+	color: #353535;
+	font-size:30px;
+	font-weight: 200;
+	line-height: 28px;
+}
+
+// Nav
+
+#navbar {
+	position: fixed;
+	top: 25px;
+
+	li {
+		background: #f1f1f1;
+		border-top: #a1a1a1 1px solid;
+			border-bottom: #a1a1a1 1px solid;
+			border-right: #a1a1a1 1px solid;
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
+	   -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
+	        box-shadow: 0 0 5px rgba(0,0,0,.15);
+		float: left;
+
+		a {
+			background: #f1f1f1;
+			color: #898989;
+			display: inline-block;
+			font-size: 16px;
+			padding: 25px 35px;
+			text-shadow: 0 1px 1px rgba(255,255,255,.75);
+		}
+	}
+
+	li:first-child {
+		-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+		    -webkit-border-radius-top-left: 3px; /* pre-Safari 5, delete unused */
+		 -webkit-border-radius-bottom-left: 3px;
+		                -moz-border-radius: 3px 0 0 3px;
+		                     border-radius: 3px 0 0 3px;
+		border-left: #a1a1a1 1px solid;
+	}
+
+	li:last-child {
+		-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+		   -webkit-border-radius-top-right: 3px;
+		-webkit-border-radius-bottom-right: 3px;
+		                -moz-border-radius: 0 3px 3px 0;
+		                     border-radius: 0 3px 3px 0;
+		
+	}
+
+	.bose {
+		padding: 25px 35px;
+	}
+
+	.buy {
+	background: #009dd5;
+	border: 1px solid #0086b5;
+	-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	   -moz-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	        box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	color: #fff;
+	display: inline-block;
+	float: left;
+	font-size: 16px;
+	text-shadow: 0 -1px 1px #26739c;
+	padding: 25px 35px;
+}
+}
+
+// Slides
+
+.slide {
+	height: 640px;
+	width: 100%;
+}
+
+#slide-1 {
+	background: url(../img/slide-1-bg.png) left bottom no-repeat;
+}
+
+#slide-2 {
+	background: rgb(233,252,252); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%, rgba(0,157,213,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(233,252,252,1)), color-stop(100%,rgba(0,157,213,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* IE10+ */
+	background: radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcfc', endColorstr='#009dd5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	height: 700px;
+}
+
+#slide-3 {
+	background: url(../img/stripe.gif) repeat;
+}
