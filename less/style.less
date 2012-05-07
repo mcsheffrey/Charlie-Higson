@@ -3,15 +3,15 @@
 body {
 	background: #ededed;
 	font-family: "proxima-nova";
-  padding-top: 60px;
   padding-bottom: 40px;
+  text-align: center;
 }
 
 @import "bootstrap/responsive.less";
 
 
 /* ===== Primary Styles ========================================================
-   Author: Connor & Anthony
+   Author: meltmedia
    ========================================================================== */
 
 // Headers
@@ -21,39 +21,102 @@ h1 {
 	font-size: 56px;
 	font-weight: 200;
 	line-height: 50px;
+	margin: .5em 0;
 }
 
 h2 {
+	color: #464646;
+	font-size: 48px;
+	font-weight: 200;
+	line-height: 42px;
+	margin: .5em 0;
+}
+
+h3 {
 	color: #353535;
 	font-size:30px;
 	font-weight: 200;
 	line-height: 28px;
+	margin: .5em 0;
+}
+
+h4 {
+	color: #636363;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 28px;
+	margin: .5em 0;
+}
+
+.btn {
+	background: #009dd5;
+	border: 1px solid #0086b5;
+	-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	   -moz-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	        box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	color: #fff;
+	display: inline-block;
+	font-size: 16px;
+	padding: 12px 15px;
+	text-shadow: 0 -1px 1px #26739c;
 }
 
 // Nav
 
 #navbar {
+	left: 50%;
+	margin-left: -501px;
 	position: fixed;
 	top: 25px;
+	width: 1002px;
+	z-index: 9999;
+
+	.nav {
+		float: left;
+	}
 
 	li {
 		background: #f1f1f1;
 		border-top: #a1a1a1 1px solid;
-			border-bottom: #a1a1a1 1px solid;
-			border-right: #a1a1a1 1px solid;
-		-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
-	   -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
-	        box-shadow: 0 0 5px rgba(0,0,0,.15);
+		border-bottom: #a1a1a1 1px solid;
+		border-right: #a1a1a1 1px solid;
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	     -moz-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	          box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
+	  display: inline-block;
 		float: left;
+		position: relative;
 
 		a {
-			background: #f1f1f1;
 			color: #898989;
 			display: inline-block;
 			font-size: 16px;
 			padding: 25px 35px;
 			text-shadow: 0 1px 1px rgba(255,255,255,.75);
 		}
+	}
+
+	li.active:after {
+		background: #f1f1f1;
+		border: #a1a1a1 1px solid;
+		-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
+   		 -moz-box-shadow: 0 0 5px rgba(0,0,0,.15);
+        		box-shadow: 0 0 5px rgba(0,0,0,.15);
+		bottom: -12px;
+		content: '';
+		display: block;
+		height: 22px;
+		margin-left: -11px;
+		position: absolute;
+		left: 50%;
+		-webkit-transform: rotate(135deg);
+		-webkit-background-clip: content;
+		-webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(#000000), color-stop(0.5,#000000), color-stop(0.5, transparent), to(transparent));
+		width: 22px;
 	}
 
 	li:first-child {
@@ -74,41 +137,41 @@ h2 {
 		
 	}
 
-	.bose {
-		padding: 25px 35px;
+	.bose a {
+		background: url(../img/bose-logo.png) center center no-repeat;
+		height: 18px;
+		width: 135px;
 	}
 
 	.buy {
-	background: #009dd5;
-	border: 1px solid #0086b5;
-	-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
-	   -moz-box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
-	        box-shadow: 0 0 5px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.7);
-	color: #fff;
-	display: inline-block;
-	float: left;
-	font-size: 16px;
-	text-shadow: 0 -1px 1px #26739c;
-	padding: 25px 35px;
-}
+		float: left;
+		margin-left: 12px;
+		padding: 25px 35px;
+	}
 }
 
 // Slides
 
 .slide {
 	height: 640px;
+	position: relative;
 	width: 100%;
 }
 
-#slide-1 {
-	background: url(../img/slide-1-bg.png) left bottom no-repeat;
+.container {
+	padding-top: 160px;
+	text-align: left;
 }
 
-#slide-2 {
+.slide-1 {
+	background: url(../img/slide-1-bg.png) left bottom no-repeat;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	   -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	        box-shadow: 0 0 10px rgba(0,0,0,.4);
+	z-index: 104;
+}
+
+.slide-2 {
 	background: rgb(233,252,252); /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%, rgba(0,157,213,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(233,252,252,1)), color-stop(100%,rgba(0,157,213,1))); /* Chrome,Safari4+ */
@@ -118,8 +181,134 @@ h2 {
 	background: radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcfc', endColorstr='#009dd5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	height: 700px;
+	position: relative;
+	z-index: 102;
 }
 
-#slide-3 {
+.video-container {
+	background: #fff;
+	-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.5);
+	   -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
+	        box-shadow: 0 0 10px rgba(0,0,0,.5);
+	display: inline-block;
+	margin: 170px auto 0 auto;
+	padding: 3px;
+}
+
+.parallax {
+	position: absolute;
+}
+
+#parallax-1 {
+	left: 0;
+}
+
+#parallax-2 {
+	left: 20%;
+	top: 200px;
+}
+
+#parallax-3 {
+	right: 10%;
+}
+
+#parallax-4 {
+	left: 20%;
+	top: 200px;
+}
+
+.slide-3 {
 	background: url(../img/stripe.gif) repeat;
+		-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	   	 -moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	        	box-shadow: 0 0 10px rgba(0,0,0,.4);
+	z-index: 103;
+}
+
+.gallery {
+	display: inline-block;
+	height: 200px;
+	list-style: none;
+	width: 100%;
+
+	li {
+		-webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
+			   -moz-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
+			        box-shadow: inset 0 2px 1px rgba(255,255,255,.4); /* inset offset-x offset-y blur spread color */
+		display: block !important;
+		float: left;
+		margin-right: 15px;
+
+		img {
+			border: 1px solid #2c2c2c;
+			-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
+			-webkit-border-radius: 3px;
+			   -moz-border-radius: 3px;
+			        border-radius: 3px;
+			z-index: -1;
+		}
+	}
+
+	li:last-child {
+		margin-right: 0;
+	}
+}
+
+#pagi a {
+	background: #c2c2c2;
+	border-radius: 25px;
+	display: block;
+	float: left;
+	height: 20px;
+	margin-right: 12px;
+	text-indent: -9999px;
+	width: 20px;
+}
+
+#pagi a:last-child {
+	margin-right: 0;
+}
+
+#pagi a.activeSlide {
+	background: #464646;
+}
+
+.slide-4 {
+	z-index: 101;
+}
+
+
+@media (max-width: 767px) {
+	body {
+		padding: 0;
+	}
+}
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } 
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
 }
