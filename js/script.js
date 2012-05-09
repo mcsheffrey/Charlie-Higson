@@ -3,6 +3,20 @@
 
 (function() {
 
+  $.Mobile = ($('body').hasClass('webkit-mobile') || (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)));
+
+  if($.Mobile){
+    //code for mobile device
+  }else{
+    
+  }
+
+  $('#introduction').parallax(0, 2500, 0.1, true);
+  $('#photos').parallax(0, 1500, 0.1, true);
+  $('#additional-details').parallax(0, 500, 0.1, true);
+
+  // Chris Coyier Sublime Video Trick
+
   // Prevents some flickering
   $('#the-video').css("visibility", "hidden");
 
@@ -17,7 +31,9 @@
     sublimevideo.resize('the-video', newWidth, newWidth/1.78125);
   };
 
-  $(window).resize(function() {
+  $(window).on('resize', function(event) {
+    console.log(this);
+    
     resizeVideo();
   });
 
@@ -28,10 +44,12 @@
     resizeVideo();
   });
 
+  // ScrollTo Nav links
+
   $('#navbar a').on('click', function(event) {
     event.preventDefault();
+
     target = this.hash;
-    console.log(target);
     $.scrollTo(target, 500);
   });
 
@@ -41,16 +59,8 @@
     var scrolled = $(window).scrollTop();
     $('#parallax-1').css('top',(-100+(scrolled*0.5))+'px');
     $('#parallax-2').css('top',(-100+(scrolled*0.3))+'px');
-    $('#parallax-3').css('top',(-100+(scrolled*0.4))+'px');
-    $('#parallax-4').css('top',(-100+(scrolled*0.6))+'px');
+    $('#parallax-3').css('top',(-200+(scrolled*0.4))+'px');
+    $('#parallax-4').css('top',(200+(scrolled*0.6))+'px');
   });
 
-  var maxItems = 4;
-
-  $('.gallery').cycle({
-    fx:     'scrollHorz',
-    speed:  '600',
-    timeout: 0,
-    pager: '#pagi'
-  });
-  }());
+}());

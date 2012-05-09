@@ -2,13 +2,18 @@
 
 body {
 	background: #ededed;
-	font-family: "proxima-nova";
-  padding-bottom: 40px;
+	font-family: Verdana, Helvetica, Arial, Sans-serif;
+	font-size: 16px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
 @import "bootstrap/responsive.less";
 
+* {
+	-webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
 /* ===== Primary Styles ========================================================
    Author: meltmedia
@@ -18,6 +23,7 @@ body {
 
 h1 {
 	color: #353535;
+	font-family: "proxima-nova", Helvetica, Arial, Sans-serif;
 	font-size: 56px;
 	font-weight: 200;
 	line-height: 50px;
@@ -26,6 +32,7 @@ h1 {
 
 h2 {
 	color: #464646;
+	font-family: "proxima-nova", Helvetica, Arial, Sans-serif;
 	font-size: 48px;
 	font-weight: 200;
 	line-height: 42px;
@@ -34,6 +41,7 @@ h2 {
 
 h3 {
 	color: #353535;
+	font-family: "proxima-nova", Helvetica, Arial, Sans-serif;
 	font-size:30px;
 	font-weight: 200;
 	line-height: 28px;
@@ -42,6 +50,7 @@ h3 {
 
 h4 {
 	color: #636363;
+	font-family: "proxima-nova", Helvetica, Arial, Sans-serif;
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 28px;
@@ -63,6 +72,25 @@ h4 {
 	font-size: 16px;
 	padding: 12px 15px;
 	text-shadow: 0 -1px 1px #26739c;
+}
+
+hr {
+	background: url(../img/stripe.gif) repeat;
+	border: 0;
+	height: 7px;
+	margin: .5em 0;
+	width: 100%;
+}
+
+aside {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+p {
+	font-family: Verdana, Helvetica, Arial, Sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
 }
 
 // Nav
@@ -173,12 +201,12 @@ h4 {
 
 .slide-2 {
 	background: rgb(233,252,252); /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%, rgba(0,157,213,1) 100%); /* FF3.6+ */
+	background: -moz-radial-gradient(center, circle cover, rgba(233,252,252,1) 0%, rgba(0,157,213,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(233,252,252,1)), color-stop(100%,rgba(0,157,213,1))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* IE10+ */
-	background: radial-gradient(center, ellipse cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* W3C */
+	background: -webkit-radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* IE10+ */
+	background: radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcfc', endColorstr='#009dd5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	height: 700px;
 	position: relative;
@@ -213,12 +241,13 @@ h4 {
 }
 
 #parallax-3 {
-	right: 10%;
+	right: -5%;
+	top: 300px;
 }
 
 #parallax-4 {
-	left: 20%;
-	top: 200px;
+	right: -5%;
+	top: 400px;
 }
 
 .slide-3 {
@@ -229,26 +258,35 @@ h4 {
 	z-index: 103;
 }
 
+.gallery-mask {
+	overflow: hidden;
+}
+
 .gallery {
 	display: inline-block;
 	height: 200px;
 	list-style: none;
-	width: 100%;
+	margin: 0;
+	width: 1300px;
 
 	li {
-		-webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
-			   -moz-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
-			        box-shadow: inset 0 2px 1px rgba(255,255,255,.4); /* inset offset-x offset-y blur spread color */
-		display: block !important;
-		float: left;
-		margin-right: 15px;
-
-		img {
-			border: 1px solid #2c2c2c;
+		border: 1px solid #2c2c2c;
 			-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
 			-webkit-border-radius: 3px;
 			   -moz-border-radius: 3px;
 			        border-radius: 3px;
+		-webkit-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
+			 -moz-box-shadow: inset 0 2px 1px rgba(255,255,255,.4);
+			      box-shadow: inset 0 2px 1px rgba(255,255,255,.4); /* inset offset-x offset-y blur spread color */
+		display: inline-block !important;
+		float: left;
+		margin-right: 15px;
+
+		img {
+			-webkit-border-radius: 3px;
+			   -moz-border-radius: 3px;
+			        border-radius: 3px;
+			position: relative;
 			z-index: -1;
 		}
 	}
@@ -285,6 +323,21 @@ h4 {
 @media (max-width: 767px) {
 	body {
 		padding: 0;
+	}
+
+	.slide-1 {
+		background-size: 75%;
+	}
+}
+
+@media (max-width: 480px) {
+
+	#navbar {
+		display: none;
+	}
+
+	.slide-1 {
+		background-size: 50%;
 	}
 }
 
