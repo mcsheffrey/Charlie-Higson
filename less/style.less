@@ -278,7 +278,6 @@ p {
 	background: -ms-radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* IE10+ */
 	background: radial-gradient(center, circle cover, rgba(233,252,252,1) 0%,rgba(0,157,213,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9fcfc', endColorstr='#009dd5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-	height: 700px;
 	position: relative;
 	overflow: hidden;
 	z-index: 102;
@@ -286,6 +285,9 @@ p {
 
 .video-container {
 	background: #fff;
+	-webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 	-webkit-background-clip: padding-box; /* fix WebKit background bleed on border-radius */
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
@@ -294,8 +296,9 @@ p {
 	   -moz-box-shadow: 0 0 10px rgba(0,0,0,.5);
 	        box-shadow: 0 0 10px rgba(0,0,0,.5);
 	display: block;
-	margin: 170px 20% 0 20%;
+	margin: 170px 20% 5% 20%;
 	padding: 3px;
+	width: auto;
 }
 
 #rejecting-the-noise {
@@ -432,6 +435,7 @@ p {
 	#navbar .bose a {
 		background-size: 108px 14px;
 		height: 14px;
+		padding: 22px 17px;
 		width: 108px;
 	}
 
@@ -454,7 +458,7 @@ p {
 	}
 
 	.video-container {
-		margin: 170px 5% 0 5%;
+		margin: 170px 5% 5% 5%;
 	}
 }
 
@@ -479,6 +483,11 @@ p {
 
 	.slide-1 {
 		background-size: 50%;
+	}
+
+	#parallax-3,
+	#parallax-4 {
+		display: none;
 	}
 }
 

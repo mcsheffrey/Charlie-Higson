@@ -26,6 +26,10 @@
   // media query change
   function WidthChange(mq) {
     if (mq.matches) {
+      sublimevideo.ready(function(){
+        sublimeResize();
+      });
+
       $(window).resize(function(){
         sublimeResize();
       });
