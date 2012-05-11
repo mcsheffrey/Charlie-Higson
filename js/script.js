@@ -11,6 +11,55 @@
     
   }
 
+  $.fn.cycle.transitions.heroSlide = function($cont, $slides, opts) {
+    var $caption = $('#text-slider');
+
+    $cont.parent().css('overflow','hidden');
+
+    opts.fxFn = function(curr,next,opts,cb,fwd) {
+
+      $(next).css({ right: $cont.width() + 'px' });
+
+      $caption.animate({ right: '-' + ($caption.outerWidth(true) * 1.5 ) + 'px' }, 625, opts.easing, function() {
+
+        $caption.html($(next).find('.captionHidden').html());
+
+        $(curr).animate({ right: '-' + $cont.width() + 'px' }, 900, opts.easing, function() {
+
+          $(curr).css({ display: 'none' });
+
+        });
+
+        $(next).css({ display: 'block' }).animate({ right: '0px' }, 900, opts.easing, function() {
+
+          $caption.animate({ right: '35px' }, 625, opts.easing, function() {
+
+            if(cb) cb();
+
+          });
+
+        });
+
+      });
+
+    };
+
+  };
+
+  $('#introduction').on('hover', function(event) {
+    $('.cycle-nav').fadeIn();
+  });
+
+
+ $('#hero-slider').cycle({
+   fx: 'heroSlide',
+   timeout: 4500,
+   easing: 'easeInOutQuint',
+   next: '#right-nav',
+   prev: '#left-nav'
+ });
+
+
   // $('#introduction').parallax(0, 2500, 0.1, true);
   $('#photos').parallax(0, 1500, 0.1, true);
   $('#additional-details').parallax(0, 500, 0.1, true);
