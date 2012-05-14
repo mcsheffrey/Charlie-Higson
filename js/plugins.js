@@ -6,6 +6,94 @@ window.log = function f(){ log.history = log.history || []; log.history.push(arg
 (function(a){function b(){}for(var c="assert,count,debug,dir,dirxml,error,exception,group,groupCollapsed,groupEnd,info,log,markTimeline,profile,profileEnd,time,timeEnd,trace,warn".split(","),d;!!(d=c.pop());){a[d]=a[d]||b;}})
 (function(){try{console.log();return window.console;}catch(a){return (window.console={});}}());
 
+/* TouchEnable - I love you Ian Coyle */
+
+(function($) {
+
+   $.fn.TouchEnable = function(settings) {
+   
+    var defaults = {
+      threshold: {
+        x: 30,
+        y: 50
+      },
+      swipeLeft: function() { $(document).triggerHandler('KEYBOARD_RIGHT')}, 
+      swipeRight: function() { $(document).triggerHandler('KEYBOARD_LEFT') },
+      swiping: function(x) { $(document).triggerHandler('SWIPING',-x);} 
+    };
+    
+    var options = $.extend(defaults, options);
+    
+    if (!this) return false;
+    
+    return this.each(function() {
+      
+      var me = $(this),
+          $self = $(this),
+          originalCoord = { x: 0, y: 0 },
+          finalCoord = { x: 0, y: 0 };
+      
+      function touch_start(event) {
+        
+        console.log('Starting swipe gesture...')
+        
+        originalCoord.x = event.targetTouches[0].pageX
+        
+        originalCoord.y = event.targetTouches[0].pageY
+        
+        $(document).triggerHandler('SWIPE_START',originalCoord.x)
+        
+      }
+      
+      function touch_move(event) {
+          
+        finalCoord.x = event.targetTouches[0].pageX // Updated X,Y coordinates
+        
+        finalCoord.y = event.targetTouches[0].pageY
+        
+      }
+
+      function touch_end(event) {
+      
+        changeY = originalCoord.y - finalCoord.y
+        
+        changeX = originalCoord.x - finalCoord.x
+              
+        if(changeY < defaults.threshold.y && changeY > (defaults.threshold.y*-1)) {
+          
+          changeX = originalCoord.x - finalCoord.x
+        
+          if(changeX > defaults.threshold.x) {
+            defaults.swipeLeft()
+          }
+      
+          if(changeX < (defaults.threshold.x*-1)) {
+            defaults.swipeRight()
+      
+          }
+        
+        }
+                
+        $(document).triggerHandler('SWIPE_END');
+        
+      }
+      
+      function touch_cancel(event) { 
+
+
+      }
+      
+      this.addEventListener("touchstart", touch_start, false);
+      this.addEventListener("touchmove", touch_move, false);
+      this.addEventListener("touchend", touch_end, false);
+      this.addEventListener("touchcancel", touch_cancel, false);
+      
+    });
+
+  }
+   
+})(jQuery);
+
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
