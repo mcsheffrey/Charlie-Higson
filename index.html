@@ -17,16 +17,9 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
   <script type="text/javascript" src="http://cdn.sublimevideo.net/js/se9w1agi.js"></script>
-<!-- 
-  <link rel="stylesheet/less" href="less/style.less">
-  <script src="js/libs/less-1.3.0.min.js"></script>
-   -->
-  <!-- Use SimpLESS (Win/Linux/Mac) or LESS.app (Mac) to compile your .less files
-  to style.css, and replace the 2 lines above by this one:
--->
+
   <link rel="stylesheet" href="css/style.css">
    
-
 	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 </head>
 <body data-spy="scroll">
@@ -47,18 +40,18 @@
 
     <div class="slide slide-1" id="introduction" data-spy="scroll" data-target="#seeItInAction">
 
-      <a href="#" class="cycle-nav" id="left-nav" title="Left">Left</a>
-      <a href="#" class="cycle-nav" id="right-nav" title="Right">Right</a>
+      <a href="#" class="cycle-nav" id="left-nav" title="Left"><span>Left</span></a>
+      <a href="#" class="cycle-nav" id="right-nav" title="Right"><span>Right</span></a>
 
       <div id="hero-slider">
         <ul id="text-slider">
-          <li>
-            <h1>Introducing the revolutionary new Bose® Bluetooth® headset Series 2</h1>
-            <h3>Sound quality so fantastic, you’ll forget you’re even on your phone</h3>
+          <li class="hero-hand">
+            <h1 class="slide-header">Introducing the revolutionary new Bose® Bluetooth® headset Series 2</h1>
+            <h3 class="slide-header">Sound quality so fantastic, you’ll forget you’re even on your phone</h3>
           </li>
-          <li>
-            <h1>Efforless Syncing</h1>
-            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce  tincidunt blandit mi, non gravida nisl condimentum sit amet.</h3>
+          <li class="hero-phone">
+            <h1 class="slide-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+            <h3 class="slide-header">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt blandit mi, non gravida nisl condimentum sit amet.</h3>
           </li>
         </ul>
 
@@ -161,8 +154,8 @@
 <!-- scripts concatenated and minified via ant build script-->
 <script src="js/libs/bootstrap/bootstrap.min.js"></script>
 
-<script src="js/plugins-ck.js"></script>
-<script src="js/script-ck.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/script.js"></script>
 <!-- end scripts-->
 
 <script>

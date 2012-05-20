@@ -18,6 +18,31 @@
     
   }
 
+  function fadeInAll(elems) {
+    var i=-1;
+    function next() {
+        i = i+1;
+        if (i < elems.length)
+          $(elems[i]).delay(50).animate({
+            opacity: 1
+          }, 500, 'easeInOutQuint', next);
+    }
+    next();
+  }
+
+  function fadeOutAll(elems) {
+    var i=-1;
+    function next() {
+        i = i+1;
+        if (i < elems.length)
+          $(elems[i]).delay(50).animate({
+            opacity: 0
+          }, 500, 'easeInOutQuint', next);
+
+    }
+    next();
+  }
+
   $.fn.cycle.transitions.heroSlide = function($cont, $slides, opts) {
     var $caption = $('#text-slider');
 
@@ -25,33 +50,31 @@
 
     opts.fxFn = function(curr,next,opts,cb,fwd) {
 
-      $('#image-slider').css('left', 'auto');
+        fadeOutAll($('#text-slider').find('li').eq(opts.currSlide).find('.slide-header'));
 
-      $('#text-slider').find('li').eq(opts.currSlide).animate({ opacity: 0 }, 500, opts.easing, function() {
+        console.log(opts.currSlide);
 
-        $(this).siblings().animate({opacity: 0}, 500, opts.easing);
-
-        $(curr).animate({ 
+        $(curr).animate({
           opacity: 0,
           left: '-=30px'
         }, 500, opts.easing, function() {
 
-          $(curr).css({ 
+          $(curr).css({
             display: 'none'
           });
 
         });
 
-        $(next).css({ display: 'block' }).animate({ 
+        $(next).css({ display: 'block' }).animate({
           opacity: 1,
           left: '+=30px'
         }, 500, opts.easing, function() {
 
-          $('#text-slider').find('li').eq(opts.nextSlide).animate({opacity: 1}, 500, opts.easing);
+          fadeInAll($('#text-slider').find('li').eq(opts.nextSlide).find('.slide-header'));
+
+          console.log(opts.nextSlide);
 
         });
-
-      });
 
     };
 
@@ -59,7 +82,6 @@
 
  $('#image-slider').cycle({
    fx: 'heroSlide',
-   timeout: 4500,
    easing: 'easeInOutQuint',
    next: '#right-nav',
    prev: '#left-nav',
@@ -137,7 +159,7 @@
     event.preventDefault();
 
     var target = this.hash;
-    $.scrollTo(target, 500, {easing:'easeInOutQuint'});
+    $.scrollTo(target, 500, {easing:'easeInOutQuint',axis: 'y'});
   });
 
   $('#navbar').scrollspy();
