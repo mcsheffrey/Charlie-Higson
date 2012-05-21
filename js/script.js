@@ -128,22 +128,25 @@
   // Gets called when video needs resizing
   function resizeVideo() {
     newWidth = fluidParent.width();
-    console.log(newWidth);
     
     sublimevideo.resize('rejecting-the-noise', newWidth, newWidth/1.8049);
   };
 
   // ScrollTo Nav links
   var $navbar = $('#navbar');
+  
+  function fixIt(){
+    $navbar .css({
+      position:'fixed',
+      top: '25px'
+    });
+  };
 
   $navbar.find('a').on('click', function(event) {
     event.preventDefault();
 
     // Add position fixed on touch move
-    $navbar.css({
-      position: 'fixed',
-      top: '25px'
-    });
+    fixIt()
 
     // Find anchor position based on href
     var y = Math.floor($($(this).attr('href')).offset().top + 25);
@@ -160,6 +163,13 @@
     }});
   });
 
+  // Add position fixed on touch move
+  if($.Mobile) {
+    $(document).bind('touchmove',fixIt);
+  } else {
+    $(document).bind('scroll',fixIt);
+  }
+
   $('#navbar').scrollspy();
 
   $('#photos').flexslider({
@@ -171,13 +181,13 @@
     keyboardNav: true,
     animationLoop: false
   });
-
-  $(window).on('scroll', function(event) {
-    var scrolled = $(window).scrollTop();
-    $('#parallax-1').css('top',(-100+(scrolled*0.1))+'px');
-    $('#parallax-2').css('top',(300+(scrolled*0.2))+'px');
-    $('#parallax-3').css('top',(-200+(scrolled*0.2))+'px');
-    $('#parallax-4').css('top',(300+(scrolled*0.1))+'px');
-  });
-
+  if(!$.Mobile) {
+    $(window).on('scroll', function(event) {
+      var scrolled = $(window).scrollTop();
+      $('#parallax-1').css('top',(-100+(scrolled*0.1))+'px');
+      $('#parallax-2').css('top',(300+(scrolled*0.2))+'px');
+      $('#parallax-3').css('top',(-200+(scrolled*0.2))+'px');
+      $('#parallax-4').css('top',(300+(scrolled*0.1))+'px');
+    });
+  }
 }());
