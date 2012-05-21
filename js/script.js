@@ -14,8 +14,12 @@
       .bind('KEYBOARD_LEFT', function(event) {
         $('#image-slider').cycle('next');
       });
-  }else{
-    
+
+      // Set a timeout...
+      setTimeout(function(){
+        // Hide the address bar!
+        window.scrollTo(0, 1);
+      }, 0);
   }
 
   $.fn.cycle.transitions.heroSlide = function($cont, $slides, opts) {
@@ -47,7 +51,7 @@
           left: '+=30px'
         }, 500, opts.easing, function() {
 
-          $('#text-slider').find('li').eq(opts.nextSlide).animate({opacity: 1}, 500, opts.easing);
+          $('#text-slider').find('li').eq(opts.currSlide).animate({opacity: 1}, 500, opts.easing);
 
         });
 
@@ -126,17 +130,34 @@
     newWidth = fluidParent.width();
     console.log(newWidth);
     
-    // 1.78125 == Aspect Ratio of my videos
-    sublimevideo.resize('rejecting-the-noise', newWidth, newWidth/1.78125);
+    sublimevideo.resize('rejecting-the-noise', newWidth, newWidth/1.8049);
   };
 
   // ScrollTo Nav links
+  var $navbar = $('#navbar');
 
-  $('#navbar a').on('click', function(event) {
+  $navbar.find('a').on('click', function(event) {
     event.preventDefault();
 
+    // Add position fixed on touch move
+    $navbar.css({
+      position: 'fixed',
+      top: '25px'
+    });
+
+    // Find anchor position based on href
+    var y = Math.floor($($(this).attr('href')).offset().top + 25);
+
     var target = this.hash;
-    $.scrollTo(target, 500, {easing:'easeInOutQuint',axis: 'y'});
+    $.scrollTo(target, 500, {easing:'easeInOutQuint',axis: 'y', onAfter:function() {
+
+      // On animation complete add position absolute to nav
+      // using the anchor position as top
+      $navbar.css({
+        position: 'absolute',
+        top: y
+      });
+    }});
   });
 
   $('#navbar').scrollspy();
